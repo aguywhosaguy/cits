@@ -21,7 +21,10 @@ client.connect(err => {
             res.send("Access Denied");
         }
     })
-   app.get('/maybseretget', async (req, res) => {
+    app.get('/', () => {
+        res.send("Hello World");
+    })
+    app.get('/maybseretget', async (req, res) => {
         const { id, password } = req.query;
         if (password == "uhatiusomuch") {
             try { 
