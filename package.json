@@ -4,7 +4,7 @@
   "description": "my api stuff",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node test.js"
   },
   "author": "aguywhosaguy",
   "license": "ISC",
