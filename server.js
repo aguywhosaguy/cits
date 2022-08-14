@@ -21,7 +21,7 @@ client.connect(err => {
             res.send("Access Denied");
         }
     })
-    app.get('/', () => {
+    app.get('/', (rep, res) => {
         res.send("Hello World");
     })
     app.get('/maybseretget', async (req, res) => {
