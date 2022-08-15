@@ -12,7 +12,8 @@ client.connect(err => {
         const { id, password } = req.query;
         if (password == "ialoveusomuch") {
             try {
-                if (collection.findOne({ id: id })) {
+                const find = await collection.findOne({ id: id })
+                if (find) {
                     res.send("Account already exists");
                 }
                 collection.insertOne({ _id: id, checkpoint: 0, objects: [], time: 0 });
