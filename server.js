@@ -8,12 +8,11 @@ client.connect(err => {
     console.log("Port: " + port);
     const collection = client.db("roblox").collection("cits");
     console.log("Connected to MongoDB");
-    app.post('/seckretcreateacc', (req, res) => {
+    app.post('/seckretcreateacc', async (req, res) => {
         const { id, password } = req.query;
         if (password == "ialoveusomuch") {
             try {
-                const find = await collection.findOne({ id: id })
-                if (find) {
+                if (collection.findOne({ id: id })) {
                     res.send("Account already exists");
                 }
                 collection.insertOne({ _id: id, checkpoint: 0, objects: [], time: 0 });
