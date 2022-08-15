@@ -15,7 +15,7 @@ client.connect(err => {
                 if (await collection.findOne({ _id: id })) {
                     res.send("Account already exists");
                 }
-                collection.insertOne({ _id: id, checkpoint: 0, objects: [], time: 0 });
+                await collection.insertOne({ _id: id, checkpoint: 0, objects: [], time: 0 });
                 res.send(id);
             } catch (err) {
                 console.log(err)
