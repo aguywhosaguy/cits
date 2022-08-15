@@ -18,6 +18,7 @@ client.connect(err => {
                 collection.insertOne({ _id: id, checkpoint: 0, objects: [], time: 0 });
                 res.send(id);
             } catch (err) {
+                console.log(err)
                 res.send("Invalid ID");
             }
         } else {
