@@ -19,7 +19,7 @@ client.connect(err => {
                 res.send(id);
             } catch (err) {
                 console.log(err)
-                res.send("Invalid ID");
+                res.send("Error");
             }
         } else {
             res.send("Access Denied");
@@ -35,7 +35,7 @@ client.connect(err => {
                 const doc = await collection.findOne({ _id: id });
                 res.send(doc);
             } catch (err) {
-                res.send("Invalid ID");
+                res.send("Error");
             }
         } else {
             res.send("Access Denied");
@@ -62,7 +62,7 @@ client.connect(err => {
                 await collection.updateOne({ _id: id }, { $set: { checkpoint: checkpoint, objects: newarray, time: time } });
                 res.send("Updated");
             } catch (err) {
-                res.send("Invalid ID");
+                res.send("Error");
             }
         } else {
             res.send("Access Denied");
