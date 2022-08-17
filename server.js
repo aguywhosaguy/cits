@@ -12,7 +12,7 @@ client.connect(err => {
     console.log("Connected to MongoDB");
     app.post('/seckretcreateacc', async (req, res) => {
         console.log(req);
-        const { id, password } = req.query;
+        const { id, password } = req.body;
         if (password == "ialoveusomuch") {
             try {
                 if (await collection.findOne({ _id: id })) {
@@ -29,7 +29,7 @@ client.connect(err => {
         }
     })
     app.get('/', (rep, res) => {
-        res.send("Hello World 4");
+        res.send("Hello World 5");
     })
     app.get('/maybseretget', async (req, res) => {
         const { id, password } = req.body;
