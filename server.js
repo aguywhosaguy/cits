@@ -45,12 +45,11 @@ client.connect(err => {
         }
     })
     app.put('/ubasesertupday', async (req, res) => {
-        console.log(req)
         let { id, password, checkpoint, objects, time } = req.body;
+        id = parseInt(id);
         objects = objects || '[]';
         objects = objects.replaceAll("'", '"')
         const parsedobjects = JSON.parse(objects);
-        console.log(id, password, checkpoint, parsedobjects, time);
         if (password == "yuhatkinyasomuch") {
             try {
                 let doc = await collection.findOne({ _id: id });
