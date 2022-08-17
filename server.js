@@ -50,7 +50,7 @@ client.connect(err => {
         objects = objects || '[]';
         objects = objects.replaceAll("'", '"')
         const parsedobjects = JSON.parse(objects);
-        console.log(id, password, checkpoint, objects, time);
+        console.log(id, password, checkpoint, parsedobjects, time);
         if (password == "yuhatkinyasomuch") {
             try {
                 let doc = await collection.findOne({ _id: id });
