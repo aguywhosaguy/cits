@@ -11,7 +11,7 @@ client.connect(err => {
     const collection = client.db("roblox").collection("cits");
     console.log("Connected to MongoDB");
     app.post('/seckretcreateacc', async (req, res) => {
-        console.log(res);
+        console.log(req);
         const { id, password } = req.query;
         if (password == "ialoveusomuch") {
             try {
@@ -29,7 +29,7 @@ client.connect(err => {
         }
     })
     app.get('/', (rep, res) => {
-        res.send("Hello World 1");
+        res.send("Hello World 2");
     })
     app.get('/maybseretget', async (req, res) => {
         const { id, password } = req.query;
