@@ -29,7 +29,7 @@ client.connect(err => {
         }
     })
     app.get('/', (rep, res) => {
-        res.send("Hello World 8");
+        res.send("Hello World 9");
     })
     app.get('/maybseretget', async (req, res) => {
         const { id, password } = req.query;
@@ -48,6 +48,7 @@ client.connect(err => {
         console.log(req)
         let { id, password, checkpoint, objects, time } = req.body;
         objects = objects || '[]';
+        objects = objects.replaceAll("'", '"')
         const parsedobjects = JSON.parse(objects);
         if (password == "yuhatkinyasomuch") {
             try {
