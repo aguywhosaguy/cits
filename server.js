@@ -29,7 +29,7 @@ client.connect(err => {
         }
     })
     app.get('/', (rep, res) => {
-        res.send("Hello World 7");
+        res.send("Hello World 8");
     })
     app.get('/maybseretget', async (req, res) => {
         const { id, password } = req.query;
@@ -45,6 +45,7 @@ client.connect(err => {
         }
     })
     app.put('/ubasesertupday', async (req, res) => {
+        console.log(req)
         let { id, password, checkpoint, objects, time } = req.body;
         objects = objects || '[]';
         const parsedobjects = JSON.parse(objects);
