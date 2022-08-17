@@ -12,7 +12,8 @@ client.connect(err => {
     console.log("Connected to MongoDB");
     app.post('/seckretcreateacc', async (req, res) => {
         console.log(req);
-        const { id, password } = req.body;
+        let { id, password } = req.body;
+        id = parseInt(id);
         if (password == "ialoveusomuch") {
             try {
                 if (await collection.findOne({ _id: id })) {
@@ -29,10 +30,11 @@ client.connect(err => {
         }
     })
     app.get('/', (rep, res) => {
-        res.send("Hello World 9");
+        res.send("Hello World 10");
     })
     app.get('/maybseretget', async (req, res) => {
-        const { id, password } = req.query;
+        let { id, password } = req.query;
+        id = parseInt(id);
         if (password == "uhatiusomuch") {
             try { 
                 const doc = await collection.findOne({ _id: id });
