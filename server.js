@@ -4,7 +4,7 @@ const app = express();
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://aguywhosaguydoessecurestuff:yeaitotallydo@aguywhosaguys-projects.5hbldf7.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 client.connect(err => {
     const port = process.env.PORT || 3000;
     console.log("Port: " + port);
@@ -29,7 +29,7 @@ client.connect(err => {
         }
     })
     app.get('/', (rep, res) => {
-        res.send("Hello World 2");
+        res.send("Hello World 3");
     })
     app.get('/maybseretget', async (req, res) => {
         const { id, password } = req.query;
