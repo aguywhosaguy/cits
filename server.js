@@ -29,10 +29,10 @@ client.connect(err => {
         }
     })
     app.get('/', (rep, res) => {
-        res.send("Hello World 5");
+        res.send("Hello World 6");
     })
     app.get('/maybseretget', async (req, res) => {
-        const { id, password } = req.body;
+        const { id, password } = req.query;
         if (password == "uhatiusomuch") {
             try { 
                 const doc = await collection.findOne({ _id: id });
