@@ -68,6 +68,7 @@ client.connect(err => {
                 await collection.updateOne({ _id: id }, { $set: { checkpoint: checkpoint, objects: newarray, time: time } });
                 res.send("Updated");
             } catch (err) {
+                console.log(err)
                 res.send("Error");
             }
         } else {
