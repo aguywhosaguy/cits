@@ -32,6 +32,9 @@ client.connect(err => {
     app.get('/', (rep, res) => {
         res.send("Hello World 10");
     })
+    app.post('/wostest', (rep, res) => {
+        res.send("Hi Waste of Space");
+    })
     app.get('/maybseretget', async (req, res) => {
         let { id, password } = req.query;
         id = parseInt(id);
