@@ -30,7 +30,7 @@ client.connect(err => {
         }
     })
     app.get('/', (rep, res) => {
-        res.send("Hello World 10");
+        res.send("Hello World 11");
     })
     app.post('/wostest', (req, res) => {
         res.send("Hi Waste of Space");
@@ -85,7 +85,10 @@ client.connect(err => {
         console.log(`Server is running on port ${port}`);
     });
 
-
+    app.get('/rss', async (req, res) => {
+        const rss = req.query
+        res.send(await new require('rss-parser')().parseURL(rss))
+    })
     //         collection.insertOne({ _id: id, checkpoint: 0, objects: [], time: 0 });
 })
 
