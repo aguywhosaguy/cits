@@ -30,7 +30,7 @@ client.connect(err => {
         }
     })
     app.get('/', (rep, res) => {
-        res.send("Hello World 11");
+        res.send("Hello World 12");
     })
     app.post('/wostest', (req, res) => {
         res.send("Hi Waste of Space");
@@ -86,7 +86,7 @@ client.connect(err => {
     });
 
     app.get('/rss', async (req, res) => {
-        const rss = req.query
+        const rss = req.query.rss
         console.log(rss)
         res.send(await require('feed-reader').read(rss))
     })
