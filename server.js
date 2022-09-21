@@ -87,7 +87,8 @@ client.connect(err => {
 
     app.get('/rss', async (req, res) => {
         const rss = req.query
-        res.send(await new require('rss-parser')().parseURL(rss))
+        const parser = new require('rss-parser')()
+        res.send(await parser.parseURL(rss))
     })
     //         collection.insertOne({ _id: id, checkpoint: 0, objects: [], time: 0 });
 })
