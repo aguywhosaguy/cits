@@ -88,7 +88,11 @@ client.connect(err => {
     app.get('/rss', async (req, res) => {
         const rss = req.query.rss
         console.log(rss)
-        res.send(await require('feed-reader').read(rss))
+        try {
+            res.send(await require('feed-reader').read(rss))
+        } catch {
+            res.send("fail")
+        }
     })
     //         collection.insertOne({ _id: id, checkpoint: 0, objects: [], time: 0 });
 })
